@@ -1,12 +1,12 @@
 # Simple HTML Rules
 
-## Span elements
+### Span 
 Render text with give style and attributes
 `<span style="bold">text</span>`
 style  = bold italics underline red on green ,same as rich bbcode
 
 ### Paragraph
-`<p justify="center|left|right|justify"></p>` render a blank line top and bottom ,accept only span element
+`<p></p>` render a blank line top and bottom ,accept text or span element
 
 ### Heading
  `<h style="bold italics">text</h>` default render as white bold underline text ,this can reset using style attribute
@@ -18,7 +18,7 @@ Render with left padding 4 space with  bullet or numbering.
 Accept only `<li>` as child
 
 ### List item
-`<li>` accept only span element
+`<li>` accept text or span element
 
 ### Rule
 `<hr>` render horizontal line 

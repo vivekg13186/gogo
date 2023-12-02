@@ -7,7 +7,6 @@ from rich.text import Text
 import sys
 import read_google_result
 import read_web_page
-
 console = Console()
 
 headers = {
