@@ -25,7 +25,7 @@ def print_shtml(text):
         if c.name == "h" :
             s = c.get("style")
             if s is None:
-                s ="bold white underline"
+                s ="bold red"
             console.print(c.text,style=s,justify="left")
         elif c.name =="p":
             text  = Text(justify="center")

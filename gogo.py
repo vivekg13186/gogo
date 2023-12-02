@@ -7,6 +7,8 @@ from rich.text import Text
 import sys
 import read_google_result
 import read_web_page
+import print_wiki_data
+
 console = Console()
 
 headers = {
@@ -40,12 +42,13 @@ def start_search():
         else:
             index  = int(option)
             url = res[index]['a']
-            #console.print(f"fetching information from {url}")
-            #title = Text(res[index]['txt'],justify='center',style='bold red')
-            text = read_web_page.read_page(url)
-            #console.print(Panel(title))
-            console.print(Panel(text,title=res[index]['txt'],subtitle=res[index]['a']))
-            option = Prompt.ask(f"select [b]0 to {len(res)-1}[/b] or type [b]'s'[/b] to return to search or type [b]'e'[/b] to exit",default="e")
+            dom = res[index]['dom']
+            if 'wikipedia.org' in dom :
+                print_wiki_data.print(url)
+            else:
+                text = read_web_page.read_page(url)
+                console.print(Panel(text,title=res[index]['txt'],subtitle=res[index]['a']))
+            option = Prompt.ask(f"type [b]0 to {len(res)-1}[/b] or type [b]'s'[/b] to return to search or type [b]'e'[/b] to exit",default="e")
             continue
 
 start_search()
